@@ -22,5 +22,8 @@ require('http').createServer(function (req, res) {
       res.end('<p>Your name is <b>' + qs.parse(body).name + '</b></p>');
     });
 
+  } else {
+    res.writeHead(404);
+    res.end('NOT FOUND');
   }
 }).listen(3000);
