@@ -84,7 +84,7 @@ fs.readdir(process.cwd(), function (err, files) {
       } else {
         fs.readFile(__dirname + '/' + filename, 'utf8',  function (err, data) {//实现指定编码
           console.log(' ');
-          console.log('\033[90m' + data.replace(/(.*)/g, '     $1') + '\033[39m');//正则表达式实现辅助缩进 $1 :与 regexp 中的第1个子表达式相匹配的文本。
+          console.log('\033[90m' + data.replace(/(.*)/g, '     $1') + '\033[39m');//正则表达式实现辅助缩进 $1 :与 regexp 中的第1个子表达式相匹配的文本。\033表示转义序列的开始；[表示开始颜色设置；90表示前景色为亮灰色；m表示颜色设置结束；39将颜色设置回去，仅对部分文本着色
         });
       }
     }
